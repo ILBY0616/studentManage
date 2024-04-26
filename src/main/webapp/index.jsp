@@ -16,7 +16,6 @@
             width: 400px; /* 设置表单宽度 */
             margin: 50px auto; /* 居中显示 */
             padding: 20px; /* 设置内边距 */
-            background-color: #ddd; /* 设置背景颜色 */
             border-radius: 10px; /* 设置边框圆角 */
         }
 

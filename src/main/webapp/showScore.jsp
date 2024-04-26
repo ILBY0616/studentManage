@@ -1,4 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page import="java.sql.*" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -67,6 +68,37 @@
         </td>
     </tr>
 </table>
+<%
+    String message;
+    try {
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        String url = "jdbc:mysql://localhost:3306/studentManage";
+        Connection connection = DriverManager.getConnection(url, "root", "123456");
+        String sql = "insert into score values(?, ?, ?, ?, ?, ?)";
+        PreparedStatement pstmt = connection.prepareStatement(sql);
+
+        pstmt.setString(1, student.getId());
+        pstmt.setString(2, student.getName());
+        pstmt.setInt(3, student.getMathScore());
+        pstmt.setInt(4, student.getEnglishScore());
+        pstmt.setInt(5, student.getProgramScore());
+        pstmt.setInt(6, student.getDatabaseScore());
+
+        int row = pstmt.executeUpdate();
+        if (row > 0) {
+            message = "信息添加成功";
+        } else {
+            message = "信息添加失败";
+        }
+        pstmt.close();
+        connection.close();
+    } catch (Exception e) {
+        message = "发生错误：" + e.getMessage();
+    }
+%>
+<div>
+    <h2><%= message %></h2>
+</div>
 <%@ include file="footer.jsp" %>
 </body>
 </html>

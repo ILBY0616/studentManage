@@ -57,7 +57,7 @@
         <a href="index.jsp">录入成绩</a>
     </li>
     <li>
-        <a href="#">查询成绩</a>
+        <a href="selectRequest.jsp">查询成绩</a>
     </li>
     <li>
         <a href="#">修改成绩</a>
@@ -66,7 +66,7 @@
         <a href="#">删除成绩</a>
     </li>
     <li>
-        <a href="#">查看全部成绩</a>
+        <a href="showAllScore.jsp">查看全部成绩</a>
     </li>
 </ul>
 </body>
