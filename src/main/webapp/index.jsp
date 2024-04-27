@@ -11,36 +11,36 @@
             box-sizing: border-box;
         }
         .inputDiv {
-            background-color: #f0f0f0; /* 设置页面背景颜色 */
-            font-family: Arial, sans-serif; /* 设置字体 */
-            width: 400px; /* 设置表单宽度 */
-            margin: 50px auto; /* 居中显示 */
-            padding: 20px; /* 设置内边距 */
-            border-radius: 10px; /* 设置边框圆角 */
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            border-radius: 10px;
         }
 
         table {
-            width: 100%; /* 设置表格宽度 */
-            border-spacing: 0; /* 消除单元格之间的间距 */
-            border-collapse: collapse; /* 合并单元格边框 */
+            width: 100%;
+            border-spacing: 0;
+            border-collapse: collapse;
         }
 
         caption {
-            font-size: 20px; /* 设置标题字体大小 */
-            margin-bottom: 10px; /* 设置标题与表格之间的距离 */
+            font-size: 20px;
+            margin-bottom: 10px;
         }
 
         .left {
-            color: chocolate; /* 设置文字颜色 */
-            width: 30%; /* 设置单元格宽度 */
+            color: chocolate;
+            width: 30%;
             height: 50px;
-            margin-bottom: 10px; /* 设置输入框之间的距离 */
+            margin-bottom: 10px;
         }
 
         .right {
-            width: 70%; /* 输入框宽度减去一定的内边距 */
+            width: 70%;
             height: 50px;
-            margin-bottom: 10px; /* 设置输入框之间的距离 */
+            margin-bottom: 10px;
         }
 
         .right > label {
