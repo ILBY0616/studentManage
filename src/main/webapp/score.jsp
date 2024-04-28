@@ -3,7 +3,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>selectResponse</title>
+    <title>score</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -13,20 +13,19 @@
             margin: 50px auto;
         }
         th, td {
-            border: 1px solid #ddd; /* 单元格边框 */
-            padding: 8px; /* 单元格内边距 */
-            text-align: center; /* 文本居中 */
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
         }
         th {
-            background-color: #f2f2f2; /* 表头背景色 */
+            background-color: #f2f2f2;
         }
     </style>
 </head>
 <body>
 <%@ include file="header.jsp" %>
-<% request.setCharacterEncoding("UTF-8"); %>
 <jsp:useBean id="student" class="studentManage.pojo.Student"/>
-<h2>查询结果</h2>
+<h2>全部成绩</h2>
 <table>
     <tr>
         <th>学号</th>
@@ -40,15 +39,12 @@
     </tr>
     <%
         try {
-            String key = request.getParameter("queryKey");
-            String value = request.getParameter("queryValue");
             Class.forName("com.mysql.cj.jdbc.Driver");
             String url = "jdbc:mysql://localhost:3306/studentManage";
             Connection connection = DriverManager.getConnection(url, "root", "123456");
-            String sql = "select * from score where " + key + " = ?";
-            PreparedStatement preparedStatement = connection.prepareStatement(sql);
-            preparedStatement.setString(1, value);
-            ResultSet rs = preparedStatement.executeQuery();
+            Statement statement = connection.createStatement();
+            String sql = "select * from score";
+            ResultSet rs = statement.executeQuery(sql);
             while (rs.next()) {
                 student.setId(rs.getString("id"));
                 student.setName(rs.getString("name"));
@@ -70,7 +66,7 @@
     <%
             }
             rs.close();
-            preparedStatement.close();
+            statement.close();
             connection.close();
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());

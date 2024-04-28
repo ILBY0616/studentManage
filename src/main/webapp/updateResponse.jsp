@@ -4,23 +4,23 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>showScore</title>
+    <title>updateResponse</title>
     <style>
         table {
             width: 80%;
             margin: 0 auto;
-            border-collapse: collapse; /* 合并表格边框 */
+            border-collapse: collapse;
         }
 
         th, td {
-            padding: 8px; /* 设置单元格内边距 */
-            border: 1px solid #ddd; /* 设置单元格边框 */
-            text-align: center; /* 设置单元格文本水平居中 */
-            vertical-align: top; /* 设置单元格垂直对齐方式为顶部 */
+            padding: 8px;
+            border: 1px solid #ddd;
+            text-align: center;
+            vertical-align: top;
         }
 
         th {
-            background-color: #f2f2f2; /* 设置表头背景颜色 */
+            background-color: #f2f2f2;
         }
     </style>
 </head>
@@ -29,7 +29,7 @@
 <% request.setCharacterEncoding("UTF-8"); %>
 <jsp:useBean id="student" class="studentManage.pojo.Student"/>
 <table>
-    <caption>学生成绩信息显示</caption>
+    <caption>学生成绩信息修改</caption>
     <tr>
         <th>学号</th>
         <th>姓名</th>
@@ -74,21 +74,20 @@
         Class.forName("com.mysql.cj.jdbc.Driver");
         String url = "jdbc:mysql://localhost:3306/studentManage";
         Connection connection = DriverManager.getConnection(url, "root", "123456");
-        String sql = "insert into score values(?, ?, ?, ?, ?, ?)";
+        String sql = "update score set name=?, mathScore=?, englishScore=?, programScore=?, databaseScore=? where id=?";
+        System.out.println(sql);
         PreparedStatement pstmt = connection.prepareStatement(sql);
-
-        pstmt.setString(1, student.getId());
-        pstmt.setString(2, student.getName());
-        pstmt.setInt(3, student.getMathScore());
-        pstmt.setInt(4, student.getEnglishScore());
-        pstmt.setInt(5, student.getProgramScore());
-        pstmt.setInt(6, student.getDatabaseScore());
-
+        pstmt.setString(1, student.getName());
+        pstmt.setInt(2, student.getMathScore());
+        pstmt.setInt(3, student.getEnglishScore());
+        pstmt.setInt(4, student.getProgramScore());
+        pstmt.setInt(5, student.getDatabaseScore());
+        pstmt.setString(6, student.getId());
         int row = pstmt.executeUpdate();
         if (row > 0) {
-            message = "信息添加成功";
+            message = "信息修改成功";
         } else {
-            message = "信息添加失败";
+            message = "信息修改失败";
         }
         pstmt.close();
         connection.close();
@@ -97,7 +96,8 @@
     }
 %>
 <div>
-    <h2><%= message %></h2>
+    <h2><%= message %>
+    </h2>
 </div>
 <%@ include file="footer.jsp" %>
 </body>

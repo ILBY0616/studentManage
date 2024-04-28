@@ -54,19 +54,19 @@
 <h1>学生成绩管理系统</h1>
 <ul>
     <li>
-        <a href="index.jsp">录入成绩</a>
+        <a href="addRequest.jsp">增加成绩</a>
     </li>
     <li>
-        <a href="selectRequest.jsp">查询成绩</a>
+        <a href="deleteRequest.jsp">删除成绩</a>
     </li>
     <li>
-        <a href="#">修改成绩</a>
+        <a href="updateRequest.jsp">修改成绩</a>
     </li>
     <li>
-        <a href="#">删除成绩</a>
+        <a href="findRequest.jsp">查询成绩</a>
     </li>
     <li>
-        <a href="showAllScore.jsp">查看全部成绩</a>
+        <a href="score.jsp">查询所有成绩</a>
     </li>
 </ul>
 </body>

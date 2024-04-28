@@ -3,13 +3,14 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>index</title>
+    <title>updateRequest</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+
         .inputDiv {
             background-color: #f0f0f0;
             font-family: Arial, sans-serif;
@@ -44,27 +45,27 @@
         }
 
         .right > label {
-            width: 100%; /* 设置按钮宽度 */
+            width: 100%;
             height: 60%;
         }
 
         .right > label > input {
-            width: 100%; /* 设置按钮宽度 */
+            width: 100%;
             height: 60%;
         }
 
         input[type="submit"] {
-            width: 100%; /* 设置按钮宽度 */
-            padding: 10px; /* 设置按钮内边距 */
-            background-color: chocolate; /* 设置按钮背景颜色 */
-            color: #fff; /* 设置按钮文字颜色 */
-            border: none; /* 去除按钮边框 */
-            cursor: pointer; /* 设置鼠标样式为手型 */
-            border-radius: 5px; /* 设置按钮边框圆角 */
+            width: 100%;
+            padding: 10px;
+            background-color: chocolate;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
         }
 
         input[type="submit"]:hover {
-            background-color: #8b4513; /* 设置按钮鼠标悬停时的背景颜色 */
+            background-color: #8b4513;
         }
 
     </style>
@@ -72,9 +73,9 @@
 <body>
 <%@ include file="header.jsp" %>
 <div class="inputDiv">
-    <form action="showScore.jsp" method="post">
+    <form action="updateResponse.jsp" method="post">
         <table>
-            <caption>学生成绩信息录入</caption>
+            <caption>学生成绩信息修改</caption>
             <tr>
                 <td class="left">学号:</td>
                 <td class="right">

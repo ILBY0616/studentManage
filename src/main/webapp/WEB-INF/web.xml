@@ -1,3 +1,9 @@
 <web-app>
-  <display-name>Archetype Created Web Application</display-name>
+    <display-name>Archetype Created Web Application</display-name>
+    <welcome-file-list>
+        <welcome-file>addRequest.jsp</welcome-file>
+    </welcome-file-list>
+    <listener>
+        <listener-class>studentManage.util.DriverMangerListener</listener-class>
+    </listener>
 </web-app>

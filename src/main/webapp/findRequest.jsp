@@ -3,52 +3,59 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>selectRequest</title>
+    <title>findRequest</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+
         form {
-            width: 400px; /* consistent width with the other form */
+            width: 400px;
             padding: 20px;
-            background-color: #ddd; /* light grey background */
-            border-radius: 10px; /* rounded corners */
-            margin: 20px auto; /* margin for auto layout and spacing */
+            background-color: #ddd;
+            border-radius: 10px;
+            margin: 20px auto;
         }
+
         form h2 {
-            text-align: center; /* centering title */
+            text-align: center;
         }
+
         form p {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 20px; /* spacing between form rows */
+            margin-bottom: 20px;
         }
+
         label {
-            flex-grow: 1; /* labels take up remaining space */
+            flex-grow: 1;
         }
+
         select, input[type="text"], input[type="submit"] {
-            width: 100%; /* full width of their parent */
-            padding: 8px; /* comfortable padding */
-            margin-right: 10px; /* spacing between elements */
+            width: 100%;
+            padding: 8px;
+            margin-right: 10px;
         }
+
         input[type="submit"] {
-            background-color: chocolate; /* consistent button color */
+            background-color: chocolate;
             color: white;
             border: none;
             cursor: pointer;
             border-radius: 5px;
         }
+
         input[type="submit"]:hover {
-            background-color: #8b4513; /* darker on hover */
+            background-color: #8b4513;
         }
     </style>
 </head>
 <body>
 <%@ include file="header.jsp" %>
-<form action="selectResponse.jsp" method="post">
+<form action="findResponse.jsp" method="post">
     <h2>请输入查询条件</h2>
     <div>
         <label>
